@@ -2,7 +2,7 @@
 
 import { MdDashboard, MdManageAccounts } from "react-icons/md";
 import { GrTransaction } from "react-icons/gr";
-import { IoAnalytics, IoSettings } from "react-icons/io5";
+import { IoAnalytics, IoSettings, IoHome } from "react-icons/io5";
 import { RiShoppingCartLine } from "react-icons/ri";
 
 import Link from "next/link";
@@ -38,6 +38,10 @@ const menus = [
     title: "Setting",
     icon: <IoSettings />,
     href: "#",
+  }, {
+    title: "Back To Page",
+    icon: <IoHome />,
+    href: "../..",
   },
 ];
 

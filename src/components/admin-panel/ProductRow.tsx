@@ -23,19 +23,15 @@ const ProductRow = ({
   product,
 }: PropsType) => {
   const dispatch = useAppDispatch();
-
-  // Fungsi untuk mengedit produk
   const onEdit = () => {
     dispatch(setProduct(product));
     setOpenPopup(true);
   };
-
-  // Fungsi untuk menghapus produk berdasarkan nama
   const onDelete = () => {
     dispatch(setLoading(true));
 
     const payload = {
-      name: product.name, // Menggunakan nama produk untuk penghapusan
+      name: product.name,
     };
 
     axios

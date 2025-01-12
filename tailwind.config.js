@@ -1,4 +1,6 @@
-import { withUt } from "uploadthing/tw";
+import {
+  withUt
+} from "uploadthing/tw";
 
 export default withUt({
   content: [
@@ -9,10 +11,10 @@ export default withUt({
   theme: {
     extend: {
       colors: {
-        accent: "#0989FF",
-        topHeadingPrimary: "#010f1c",
-        topHeadingSecondary: "#021d35",
-        pink: "#FD4B6B",
+        accent: "#6D28D9", 
+        topHeadingPrimary: "#1E1B24", 
+        topHeadingSecondary: "#312E38", 
+        pink: "#A78BFA", 
       },
 
       container: {
@@ -23,5 +25,3 @@ export default withUt({
   },
   plugins: [],
 });
-
-  

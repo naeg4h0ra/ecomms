@@ -11,41 +11,48 @@ const Navbar = ({ setShowCart }: propsType) => {
   const cartCount = useAppSelector((state) => state.cartReducer.length);
 
   return (
-    <div className="pt-4 bg-white top-0 sticky">
+    <div className="pt-4 bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white sticky top-0 z-50 shadow-md">
       <div className="container">
         <div className="flex justify-between items-center">
-          <h1 className="text-4xl font-bold">Logo</h1>
+          {/* Logo */}
+          <h1 className="text-4xl font-bold text-accent">Pai Library</h1>
+
+          {/* Search Bar */}
           <div className="lg:flex hidden w-full max-w-[500px]">
             <input
-              className="border-2 border-accent px-6 py-2 w-full"
+              className="border-2 border-accent px-6 py-2 w-full bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:border-pink"
               type="text"
               placeholder="Search for products..."
             />
-
-            <div className="bg-accent text-white text-[26px] grid place-items-center px-4">
+            <div className="bg-accent hover:bg-pink text-white text-[26px] grid place-items-center px-4 cursor-pointer transition-colors">
               <BsSearch />
             </div>
           </div>
 
+          {/* User & Cart */}
           <div className="flex gap-4 md:gap-8 items-center">
+            {/* User Icon */}
             <div className="md:flex gap-3 hidden">
-              <div className="rounded-full border-2 border-gray-300 text-gray-500 text-[32px] w-[50px] h-[50px] grid place-items-center">
+              <div className="rounded-full border-2 border-gray-600 text-gray-400 text-[32px] w-[50px] h-[50px] grid place-items-center hover:border-accent hover:text-white transition-colors">
                 <AiOutlineUser />
               </div>
-
               <div>
-                <p className="text-gray-500">Hello, Sign in</p>
-                <p className="font-medium">Your Account</p>
-                <a className="font-medium" href="/admin-panel/Login.tsx">Login</a>
+                <p className="text-gray-400">Hello, Sign in</p>
+                <a
+                  className="font-medium text-accent hover:text-pink transition-colors"
+                  href="/admin/dashboard"
+                >
+                  Login Admin
+                </a>
               </div>
             </div>
 
+            {/* Cart Icon */}
             <div
-              className="text-gray-500 text-[32px] relative cursor-pointer"
+              className="text-gray-400 text-[32px] relative cursor-pointer hover:text-white transition-colors"
               onClick={() => setShowCart(true)}
             >
               <AiOutlineShoppingCart />
-
               <div className="absolute top-[-15px] right-[-10px] bg-red-600 w-[25px] h-[25px] rounded-full text-white text-[14px] grid place-items-center">
                 {cartCount}
               </div>
@@ -53,7 +60,8 @@ const Navbar = ({ setShowCart }: propsType) => {
           </div>
         </div>
 
-        <div className="border-b border-gray-200 pt-4" />
+        {/* Border Bottom */}
+        <div className="border-b border-gray-700 pt-4" />
       </div>
     </div>
   );
